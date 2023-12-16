@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Catch them all!</h1>
+    <ul>
+        <% for (let i = 0; i < pokemon.length; i++) { %>
+        <li><%= pokemon[i].name %></li>
+        <% } %>
+    </ul>
 </body>
 </html>

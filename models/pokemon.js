@@ -50958,3 +50958,5 @@ module.exports = [
       }
     }
   ];
+
+pokemon = module.exports

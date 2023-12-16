@@ -23,8 +23,10 @@ app.use(methodOverride("_method"));
 
 //Routes
 app.get("/", (req,res) => {
-    res.render("pokemon/index.ejs", { data: pokemon})
+    res.render("pokemon/index.ejs", {pokemon})
 })
+
+
 // //Register the Pokedex Router
 // app.use("/pokemon", pokeRouter);
 
