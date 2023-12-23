@@ -29,13 +29,18 @@ app.get("/pokemon", (req,res) => {
 })
 
 //New
-
-
+app.get("/pokemon/new", (req, res) => {
+  res.render("pokemon/new.ejs")
+})
+//Create
+app.post("/pokemon", (req, res) => {
+  const body = req.body
+  pokemon.push(body)
+  res.redirect("/pokemon")
+})
 //Delete
 
 //Update
-
-//Create
 
 //Edit
 

@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Catch them all!</h1>
+    <nav>
+        <a href="/pokemon/new">Find a new Pokemon? Tell us about them!</a>
+    </nav>
 <ul>
         <% for (let i = 0; i < pokemon.length; i++) { %>
         <a href="/pokemon/<%= i %>"><li><%= pokemon[i].name %></li></a>
