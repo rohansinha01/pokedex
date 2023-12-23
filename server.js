@@ -22,10 +22,29 @@ app.use(morgan("dev"));
 app.use(methodOverride("_method"));
 
 //Routes
-app.get("/", (req,res) => {
+
+//Index
+app.get("/pokemon", (req,res) => {
     res.render("pokemon/index.ejs", {pokemon})
 })
 
+//New
+
+
+//Delete
+
+//Update
+
+//Create
+
+//Edit
+
+//Show
+app.get("/pokemon/:id", (req, res) => {
+  const id = req.params.id
+  const pokeman = pokemon[id]
+  res.render("Pokemon/show.ejs", {pokeman, id})
+})
 
 // //Register the Pokedex Router
 // app.use("/pokemon", pokeRouter);
