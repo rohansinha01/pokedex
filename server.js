@@ -54,7 +54,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
 })
 
 //Update
-app.put("/:id", (req, res) => {
+app.put("/pokemon/:id", (req, res) => {
   const id = req.params.id
   const body = req.body
   pokemon[id] = body

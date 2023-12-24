@@ -9,7 +9,8 @@
 <body>
 <h1>Update <%= pokeman.name %></h1> 
 <form action="/pokemon/<%= id %>?_method=PUT" method="post">
-    <label>Name: <input type="text" name="name" value="<%= pokeman.name %>"></label>
+    <label>Name: <input type="text" name="name" value="<%= pokeman.name %>"/></label>
+    <label>Image: <input type="text" name="img" value="<%= pokeman.img %>"></label>
     <input type="submit" value="Update <%= pokeman.name %>" />
 </form>     
 </body>
