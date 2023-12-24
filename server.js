@@ -39,11 +39,27 @@ app.post("/pokemon", (req, res) => {
   res.redirect("/pokemon")
 })
 //Delete
+app.delete("/pokemon/:id", (req, res) => {
+  const id = req.params.id
+  pokemon.splice(id, 1)
+  res.redirect("/pokemon")
+})
 
-//Update
 
 //Edit
+app.get("/pokemon/:id/edit", (req, res) => {
+  const id = req.params.id
+  const pokeman = pokemon[id]
+  res.render("pokemon/edit.ejs", {pokeman, id})
+})
 
+//Update
+app.put("/:id", (req, res) => {
+  const id = req.params.id
+  const body = req.body
+  pokemon[id] = body
+  res.redirect("/pokemon")
+})
 //Show
 app.get("/pokemon/:id", (req, res) => {
   const id = req.params.id

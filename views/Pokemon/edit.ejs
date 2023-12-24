@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <%- include("./cssjs.ejs") %>
+</head>
+<body>
+<h1>Update <%= pokeman.name %></h1> 
+<form action="/pokemon/<%= id %>?_method=PUT" method="post">
+    <label>Name: <input type="text" name="name" value="<%= pokeman.name %>"></label>
+    <input type="submit" value="Update <%= pokeman.name %>" />
+</form>     
+</body>
+</html>

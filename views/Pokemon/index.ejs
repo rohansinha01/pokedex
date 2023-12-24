@@ -11,10 +11,19 @@
     <nav>
         <a href="/pokemon/new">Find a new Pokemon? Tell us about them!</a>
     </nav>
+
 <ul>
-        <% for (let i = 0; i < pokemon.length; i++) { %>
+    <div class="container">
+        <% for (let i = 0; i < pokemon.length; i++) { %>  
         <a href="/pokemon/<%= i %>"><li><%= pokemon[i].name %></li></a>
+        <a href="/pokemon/<%= i %>"><img src="<%= pokemon[i].img %>"></img></a>
+        <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
+            <input type="submit" value="Delete This Pokemon">
+        </form>
+  
         <% } %>
+        </div>
         </ul>
+</div>        
 </body>
 </html>
