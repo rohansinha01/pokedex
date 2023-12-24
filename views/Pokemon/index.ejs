@@ -13,17 +13,16 @@
     </nav>
 
 <ul>
-    <div class="container">
         <% for (let i = 0; i < pokemon.length; i++) { %>  
+            <div class="single">
         <a href="/pokemon/<%= i %>"><li><%= pokemon[i].name %></li></a>
         <a href="/pokemon/<%= i %>"><img src="<%= pokemon[i].img %>"></img></a>
         <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
-            <input type="submit" value="Delete This Pokemon">
+            <input type="submit" value="Delete This Pokemon"></div>
         </form>
-  
         <% } %>
-        </div>
+        
         </ul>
-</div>        
+       
 </body>
 </html>
