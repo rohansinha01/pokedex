@@ -1,3 +1,13 @@
 .single {
-    border: 1px solid brown
+    border: 1px solid brown;
+    color: white;
+}
+
+body {
+    background-color: red;
+    color: white
+}
+
+a {
+    color: white
 }
