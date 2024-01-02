@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(methodOverride("_method"));
 
+
 //Routes
 
 //Index
@@ -32,12 +33,7 @@ app.get("/pokemon", (req,res) => {
 app.get("/pokemon/new", (req, res) => {
   res.render("pokemon/new.ejs")
 })
-//Create
-app.post("/pokemon", (req, res) => {
-  const body = req.body
-  pokemon.push(body)
-  res.redirect("/pokemon")
-})
+
 //Delete
 app.delete("/pokemon/:id", (req, res) => {
   const id = req.params.id
@@ -45,6 +41,13 @@ app.delete("/pokemon/:id", (req, res) => {
   res.redirect("/pokemon")
 })
 
+
+//Create
+app.post("/pokemon", (req, res) => {
+  const newPokemon = {name: req.body.name, img: req.body.img, stats: {hp: req.body.hp}} //hp doesn't show up on page
+  pokemon.push(newPokemon)
+  res.redirect("/pokemon")
+})
 
 //Edit
 app.get("/pokemon/:id/edit", (req, res) => {
@@ -56,10 +59,12 @@ app.get("/pokemon/:id/edit", (req, res) => {
 //Update
 app.put("/pokemon/:id", (req, res) => {
   const id = req.params.id
-  const body = req.body
+  const body  = {name: req.body.name, img: req.body.img, stats: {hp: req.body.hp}}
   pokemon[id] = body
   res.redirect("/pokemon")
 })
+
+
 //Show
 app.get("/pokemon/:id", (req, res) => {
   const id = req.params.id

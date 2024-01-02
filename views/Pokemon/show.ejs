@@ -7,11 +7,9 @@
     <%- include("./cssjs.ejs") %>
 </head>
 <body><a href="/pokemon">Back to Pokedex</a>
-    <h1><%= pokeman.name.toUpperCase()  %></h1>
-    
+    <h1><%= pokeman.name.toUpperCase()  %></h1>   
     <img src="<%= pokeman.img  %>"></img>
-    <h2>Type: <%= pokeman.type.join(', ') %></h2>
-    <% console.log(pokeman.type) %>
+    <h1><%= pokeman.stats.hp %> </h1>
     <a href="/pokemon/<%= id %>/edit"><button>Edit</button></a>
 </body>
 </html>
