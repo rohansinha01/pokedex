@@ -9,7 +9,9 @@
 <body><a href="/pokemon">Back to Pokedex</a>
     <h1><%= pokeman.name.toUpperCase()  %></h1>   
     <img src="<%= pokeman.img  %>"></img>
-    <h1><%= pokeman.stats.hp %> </h1>
+    <h1>HP: <%= pokeman.stats.hp %> </h1>
+    <h1>Attack: <%= pokeman.stats.attack %></h1>
+    <h1>Defense: <%= pokeman.stats.defense %></h1>
     <a href="/pokemon/<%= id %>/edit"><button>Edit</button></a>
 </body>
 </html>

@@ -44,7 +44,7 @@ app.delete("/pokemon/:id", (req, res) => {
 
 //Create
 app.post("/pokemon", (req, res) => {
-  let newPokemon = {name: req.body.name, img: req.body.img, stats: {hp: req.body.hp}} 
+  let newPokemon = {name: req.body.name, img: req.body.img, stats: {hp: req.body.hp, attack: req.body.attack, defense: req.body.defense}} 
   req.body = newPokemon
   pokemon.push(req.body)
   res.redirect("/pokemon")
@@ -60,7 +60,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
 //Update
 app.put("/pokemon/:id", (req, res) => {
   let id = req.params.id
-  let updatedPokemon  = {name: req.body.name, img: req.body.img, stats: {hp: req.body.hp}}
+  let updatedPokemon  = {name: req.body.name, img: req.body.img, stats: {hp: req.body.hp, attack: req.body.attack, defense: req.body.defense}} 
   let currentPokemon = pokemon[id]
   req.body = updatedPokemon
   let mergedPokemon = {
